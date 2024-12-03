@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Auction App</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Welcome Screen -->
+    <div id="welcome-screen" class="screen">
+        <h1>Welcome to Cricket Auction</h1>
+        <button id="start-auction-btn">Start Auction</button>
+    </div>
+
+    <!-- Team and Player Input Screen -->
+    <div id="setup-screen" class="screen" style="display: none;">
+        <h2>Setup Teams and Players</h2>
+
+        <!-- Team Input Section -->
+        <div id="team-setup">
+            <h3>Add Teams</h3>
+            <input type="text" id="team-name" placeholder="Enter Team Name">
+            <input type="number" id="team-balance" placeholder="Team Balance">
+            <button id="add-team-btn">Add Team</button>
+            <ul id="team-list"></ul>
+        </div>
+
+        <!-- Player Input Section -->
+        <div id="player-setup">
+            <h3>Add Players</h3>
+            <input type="text" id="player-name" placeholder="Enter Player Name">
+            <input type="number" id="player-base-price" placeholder="Base Price">
+            <select id="player-role">
+                <option value="Batsman">Batsman</option>
+                <option value="Bowler">Bowler</option>
+                <option value="All-Rounder">All-Rounder</option>
+                <option value="Wicket-Keeper">Wicket-Keeper</option>
+            </select>
+            <button id="add-player-btn">Add Player</button>
+            <ul id="player-list"></ul>
+        </div>
+
+        <button id="start-auction-btn">Proceed to Auction</button>
+    </div>
+
+    <!-- Auction Screen -->
+    <div id="auction-screen" class="screen" style="display: none;">
+        <h2>Auction</h2>
+        <div id="current-player">
+            <h3>Player: <span id="player-name-display">---</span></h3>
+            <p>Base Price: <span id="base-price-display">0</span></p>
+            <p>Current Price: <span id="current-price-display">0</span></p>
+        </div>
+        
+        <!-- Teams Section -->
+        <div id="teams">
+            <!-- Teams will dynamically appear here -->
+        </div>
+
+        <!-- Toggle Team Players View -->
+        <button id="toggle-team-players-btn">Show Team Players</button>
+
+        <!-- View Players Bought by Teams -->
+        <div id="team-players-view" style="display: none;">
+            <h3>Players Bought by Each Team:</h3>
+            <ul id="team-players-list">
+                <!-- Players bought by each team will appear here -->
+            </ul>
+        </div>
+
+        <button id="next-player-btn">Next Player</button>
+    </div>
+
+    <!-- Summary Screen -->
+    <div id="summary-screen" class="screen" style="display: none;">
+        <h2>Summary</h2>
+        <div id="team-summary">
+            <!-- Summary of players purchased by each team -->
+        </div>
+        <button id="restart-btn">Restart</button>
+    </div>
+
+    <!-- Link to JS -->
+    <script src="app.js"></script>
+</body>
+</html>
